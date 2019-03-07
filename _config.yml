@@ -1,12 +1,23 @@
-# Site settings
+---
 title: Kashi Kshetra
-email: dinesh@kashikar.net
-description: > # this means to ignore newlines until "baseurl:"
-baseurl: "/" # the subpath of your site, e.g. /blog/
-url: "https://kashi.jgda.in" # the base hostname & protocol for your site
-
-twitter_username: dkashikar
-github_username: dkashikar
-
-# Build settings
-markdown: kramdown
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: "/posts/:title/"
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+permalink: pretty
